@@ -20,6 +20,7 @@ public class ActivateVulnerable : MonoBehaviour {
     {
         if (!hack.Zapped)
         {
+            //Start elevator's movement
             el.motion = true;
             Destroy(gameObject);
         }

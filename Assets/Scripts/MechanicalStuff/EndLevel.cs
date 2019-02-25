@@ -34,13 +34,10 @@ public class EndLevel : MonoBehaviour {
 
     IEnumerator Warp()
     {
+        //Move player to next level
         yield return new WaitForSeconds(3);
         winText.text = "";
-        // Vector3 next = nextLevel.transform.position;
-        //premake a vector3, set equal to next
-        //player.transform.SetPositionAndRotation(nextLevel.transform.position, nextLevel.transform.rotation);
-        //bodyMove.enabled = true;
-        //player.transform.position = next;
+        
         SceneManager.LoadScene(level);
     }
 }

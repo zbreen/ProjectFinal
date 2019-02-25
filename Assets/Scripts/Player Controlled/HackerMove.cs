@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HackerMove : MonoBehaviour {
-
+    //Control Hacker Object with mouse
     Vector3 movement;
     int floorMask;
     public float camLength = 1000000000f;
@@ -15,8 +15,10 @@ public class HackerMove : MonoBehaviour {
         Vector3 temp=new Vector3(0f,1.5f,0f);
         transform.position = temp;
 
+        //Where mouse object will show up
         floorMask = LayerMask.GetMask("CatchCursor");
 
+        //This is used to make it so an object can or can't be hacked
         Zapped = false;
     }
 	
@@ -24,23 +26,13 @@ public class HackerMove : MonoBehaviour {
 	void FixedUpdate () {
         Ray m = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit floorHit;
-        //Debug.Log(m.direction);
-        float amount;
-        if (ground.Raycast(m,out amount))
-        {
-            //Debug.Log("here");
-        }
+        
         if (Physics.Raycast(m, out floorHit, camLength, floorMask))
         {
-           //Debug.Log(floorHit);
-
-            //Vector3 objectToMouse = floorHit.point - transform.position;
-            //objectToMouse.y = 1f;
-            //Debug.Log(objectToMouse);
+            //Adjust mouse object's position
 
             transform.position = floorHit.point;
 
         }
-        //transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, 1.0f, Input.mousePosition.z));
 	}
 }

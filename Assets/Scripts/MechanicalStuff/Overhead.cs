@@ -12,6 +12,7 @@ public class Overhead : MonoBehaviour {
 	
 	// Update is called once per frame
 	void LateUpdate () {
+        //Move camera
         transform.position = Player.transform.position + offset;
     }
 }

@@ -17,11 +17,13 @@ public class BossGuard : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        //Have it move when hit
         if (transform.position != point[current].position && current <= 2)
         {
             transform.position = Vector3.MoveTowards(transform.position, point[current].position, speed * Time.deltaTime);
         }
         else
+        //Have it attack
         {
             if (current == 2 && hp == 1)
             {
@@ -29,6 +31,7 @@ public class BossGuard : MonoBehaviour {
                 transform.Rotate(Vector3.left * Time.deltaTime, speed - 2.0f);
             }
         }
+        //Finish it
         if (hp <= 0)
         {
             Destroy(block);

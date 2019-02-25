@@ -20,12 +20,15 @@ public class VulnerableDestroy : MonoBehaviour {
 
     private void OnMouseDown()
     {
+        //Hack/Destroy the object
         if (!h.Zapped)
             shield = shield - 1;
 
         if (shield <= 0)
         {
+            //This is where the object the vulnerable is attached to is destroyed
             Destroy(d);
+            //And this is where the vulnerable itself is destroyed
             Destroy(gameObject);
         }
     }

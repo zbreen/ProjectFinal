@@ -17,6 +17,7 @@ public class Laser : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        //Use this to eliminate player
         if (other.gameObject.CompareTag("Player"))
         {
             intruder.Die();

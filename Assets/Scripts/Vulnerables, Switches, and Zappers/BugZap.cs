@@ -20,6 +20,7 @@ public class BugZap : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Hacker"))
         {
+            //Disable hacking
             p.Zapped = true;
         }
     }
@@ -28,8 +29,8 @@ public class BugZap : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Hacker"))
         {
+            //Enable hacking
             p.Zapped = false;
         }
-        p.Zapped = false;
     }
 }

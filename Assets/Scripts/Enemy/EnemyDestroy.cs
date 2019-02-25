@@ -25,6 +25,7 @@ public class EnemyDestroy : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Weight"))
         {
+            //Deal damage to enemy
             --hp;
             Destroy(collision.gameObject);
         }

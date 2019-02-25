@@ -16,6 +16,7 @@ public class Window : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
+        //Object destructible to weight
         if (collision.gameObject.CompareTag("Weight"))
             Destroy(gameObject);
     }

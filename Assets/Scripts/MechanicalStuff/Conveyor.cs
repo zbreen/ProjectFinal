@@ -18,6 +18,7 @@ public class Conveyor : MonoBehaviour {
     }
     private void OnCollisionStay(Collision collision)
     {
+        //Move object like it'd move on a conveyor belt
         collision.transform.position += transform.forward * speed * Time.deltaTime;
     }
 }

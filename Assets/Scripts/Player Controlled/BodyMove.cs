@@ -21,6 +21,7 @@ public class BodyMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        //For movement
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
@@ -42,24 +43,16 @@ public class BodyMove : MonoBehaviour {
         movement = movement.normalized * speed * Time.deltaTime;
 
         rb.MovePosition(transform.position + movement);
+        
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        //For colliding with enemies
         if (collision.gameObject.CompareTag("Pit") || collision.gameObject.CompareTag("Guard"))
         {
             Die();
         }
-
-        else if (collision.gameObject.CompareTag("Elevator"))
-        {
-            transform.parent = collision.gameObject.transform;
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        transform.parent = null;
     }
 
     public void Die()
@@ -67,6 +60,4 @@ public class BodyMove : MonoBehaviour {
         alive = false;
         SceneManager.LoadScene(checkpoint);
     }
-
-    
 }

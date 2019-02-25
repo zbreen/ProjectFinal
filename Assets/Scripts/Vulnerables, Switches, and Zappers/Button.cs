@@ -22,6 +22,7 @@ public class Button : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            //This is so we can disable doors/bug zappers
             GetComponent<Renderer>().material = O;
             if (D.activeInHierarchy)
             {
